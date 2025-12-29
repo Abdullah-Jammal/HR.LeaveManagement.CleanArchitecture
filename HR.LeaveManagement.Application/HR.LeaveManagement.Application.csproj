@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\Services\" />
+    <Folder Include="Features\LeaveAllocations\Commands\" />
+    <Folder Include="Features\LeaveAllocations\Queries\" />
+    <Folder Include="Features\LeaveRequests\Commands\" />
+    <Folder Include="Features\LeaveRequests\Queries\" />
+    <Folder Include="Features\LeaveTypes\Commands\CreateLeaveType\" />
+    <Folder Include="Features\LeaveTypes\Commands\UpdateLeaveType\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HR.LeaveManagement.Domain\HR.LeaveManagement.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

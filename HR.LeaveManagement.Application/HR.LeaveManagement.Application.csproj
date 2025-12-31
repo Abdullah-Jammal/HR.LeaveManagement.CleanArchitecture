@@ -12,11 +12,11 @@
     <Folder Include="Features\LeaveAllocations\Queries\" />
     <Folder Include="Features\LeaveRequests\Commands\" />
     <Folder Include="Features\LeaveRequests\Queries\" />
-    <Folder Include="Features\LeaveTypes\Commands\CreateLeaveType\" />
-    <Folder Include="Features\LeaveTypes\Commands\UpdateLeaveType\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="MediatR" Version="14.0.0" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
 ﻿using HR.LeaveManagement.Application.Contracts.Persistence;
+using HR.LeaveManagement.Application.Exceptions;
+using HR.LeaveManagement.Domain.Entities;
 using MediatR;
 
 namespace HR.LeaveManagement.Application.Features.LeaveTypes.Queries.GetLeaveTypeDetails;
@@ -10,6 +12,10 @@ public class GetLeaveTypeDetailsHandler(ILeaveTypeRepository leaveTypeRepository
         CancellationToken cancellationToken)
     {
         var leaveType = await leaveTypeRepository.GetByIdAsync(request.Id);
+        if (leaveType == null)
+        {
+            throw new NotFoundException(nameof(LeaveType), request.Id);
+        }
         var leaveTypeDetailsDto = new LeaveTypeDetailsDto
         {
             Id = leaveType!.Id,

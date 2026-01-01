@@ -4,7 +4,9 @@ namespace HR.LeaveManagement.Application.Contracts.Persistence;
 
 public interface ILeaveRequestRepository
 {
-    Task AddAsync(LeaveRequest request);
+    Task<List<LeaveRequest>> GetAllAsync();
     Task<LeaveRequest?> GetByIdAsync(int id);
-    Task<List<LeaveRequest>> GetByEmployeeIdAsync(int employeeId);
+    Task AddAsync(LeaveRequest request);
+    Task UpdateAsync(LeaveRequest request);
+    Task DeleteAsync(LeaveRequest request);
 }

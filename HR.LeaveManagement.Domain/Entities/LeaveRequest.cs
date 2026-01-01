@@ -7,7 +7,7 @@ public class LeaveRequest : BaseEntity
     public DateOnly StartDate { get; set; }
     public DateOnly EndDate { get; set; }
     public int LeaveTypeId { get; set; }
-    public LeaveType LeaveType { get; set; } = new LeaveType();
+    public LeaveType LeaveType { get; set; } = null!;
     public string RequestComments { get; set; } = string.Empty;
     public bool? Approved { get; set; }
     public bool Cancelled { get; set; }

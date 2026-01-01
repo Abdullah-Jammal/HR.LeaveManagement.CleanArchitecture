@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\Services\" />
     <Folder Include="Features\LeaveAllocations\Commands\" />
     <Folder Include="Features\LeaveAllocations\Queries\" />
     <Folder Include="Features\LeaveRequests\Commands\" />

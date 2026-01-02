@@ -19,15 +19,17 @@ public class HrDatabaseContext : DbContext
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
-            .Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))
+        foreach (var entry in ChangeTracker.Entries<BaseEntity>()
+            .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified))
         {
-            entry.Entity.UpdatedAt = DateTime.Now;
+            entry.Entity.UpdatedAt = DateTime.UtcNow;
+
             if (entry.State == EntityState.Added)
             {
-                entry.Entity.CreatedAt = DateTime.Now;
+                entry.Entity.CreatedAt = DateTime.UtcNow;
             }
         }
+
         return base.SaveChangesAsync(cancellationToken);
     }
 }
